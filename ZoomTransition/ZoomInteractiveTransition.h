@@ -49,6 +49,8 @@
  */
 @property (nonatomic, assign) BOOL handleEdgePanBackGesture;
 
+@property (nonatomic, weak) id <UIGestureRecognizerDelegate> edgePanBackGestureDelegate;
+
 /**
  Animation option for keyframe animations used to transition between views. Default value is UIViewKeyframeAnimationOptionCalculationModeCubic.
  */

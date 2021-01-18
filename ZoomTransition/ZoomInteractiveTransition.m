@@ -258,6 +258,10 @@
             id<UIViewControllerAnimatedTransitioning> returnValue = [(id<ZoomTransitionProtocol>)fromVC animationControllerForTransitionToViewController:toVC];
             return [self _return:returnValue nC:navigationController fromVC:fromVC toVC:toVC];
         } else {
+            if (self.edgePanBackGestureDelegate) {
+                navigationController.interactivePopGestureRecognizer.delegate = self.edgePanBackGestureDelegate;
+                return nil;
+            }
             return [self _return:nil nC:navigationController fromVC:fromVC toVC:toVC];
         }
     }
